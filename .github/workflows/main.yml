@@ -12,8 +12,6 @@ jobs:
       contents: write
     steps:
 
-    - name: Checkout Repo
-      uses: actions/checkout@v4
     - name: Install Package
       run: sudo apt-get update && sudo apt-get install -y simple-cdd
     - name: Build ISO
