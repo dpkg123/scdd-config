@@ -16,7 +16,7 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@v4
     - name: Install Package
-      run: sudo apt-get update && sudo apt-get install -y simple-cdd
+      run: apt-get update && apt-get install -y simple-cdd
     - name: Build ISO
       run: build-simple-cdd
     - run: ls
