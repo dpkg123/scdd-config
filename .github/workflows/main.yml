@@ -1,0 +1,22 @@
+name: ci
+on:
+  push:
+    branches: main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build-iso:
+    container: debian:bookworm
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+
+    - name: Checkout Repo
+      uses: actions/checkout@v4
+    - name: Install Package
+      run: sudo apt-get update && sudo apt-get install -y simple-cdd
+    - name: Build ISO
+      run: build-simple-cdd
+    - run: ls
